@@ -599,31 +599,31 @@
             <div class="eight columns">
 
                <!-- form -->
-               <form action="https://formspree.io/f/mdoyvana" method="post" id="contactForm" name="contactForm">
+               <form action="https://formspree.io/f/mdoyvana" method="post" id="contactForm">
 					<fieldset>
 
                   <div>
 						   <label for="contactName">Nom <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactName" name="contactName">
+						   <input type="text" value="" size="35" id="contactName" name="_name">
                   </div>
 
                   <div>
 						   <label for="contactEmail">Email <span class="required">*</span></label>
-						   <input type ="text" value="" size="35" id="contactEmail" name="contactEmail">
+						   <input type ="text" value="" size="35" id="contactEmail" name="_replyto">
                   </div>
 
                   <div>
 						   <label for="contactSubject">Sujet</label>
-						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+						   <input type="text" value="" size="35" id="contactSubject" name="_subject">
                   </div>
 
                   <div>
                      <label for="contactMessage">Message<span class="required">*</span></label>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                     <textarea cols="50" rows="15" id="contactMessage" name="_message"></textarea>
                   </div>
 
                   <div>
-                     <button form="contactForm" class="submit">Envoyer</button>
+                     <button form="contactForm" type="submit" class="submit">Envoyer</button>
                      <span id="image-loader">
                         <img alt="" src="images/loader.gif">
                      </span>
