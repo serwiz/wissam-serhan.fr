@@ -151,8 +151,9 @@
 
       $.ajax({
 
-	      type: "POST",
-	      url: "inc/sendEmail.php",
+	      method: "POST",
+	      url: "https://formspree.io/f/mdoyvana",
+         dataType: "json",
 	      data: data,
 	      success: function(msg) {
 
