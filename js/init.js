@@ -146,33 +146,29 @@
       var contactSubject = $('#contactForm #contactSubject').val();
       var contactMessage = $('#contactForm #contactMessage').val();
 
-      var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-               '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
-
       $.ajax({
-
 	      method: "POST",
 	      url: "https://formspree.io/f/mdoyvana",
          dataType: "json",
-	      data: data,
+	      data: {
+            "email"     : contactEmail,
+            "name"      : contactName,
+            "subject"   : contactSubject,
+            "message"   : contactMessage
+         },
+         // If message was sent
 	      success: function(msg) {
-
-            // Message was sent
-            if (msg == 'OK') {
-               $('#image-loader').fadeOut();
-               $('#message-warning').hide();
-               $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();   
-            }
-            // There was an error
-            else {
-               $('#image-loader').fadeOut();
-               $('#message-warning').html(msg);
-	            $('#message-warning').fadeIn();
-            }
-
-	      }
-
+            $('#image-loader').fadeOut();
+            $('#message-warning').hide();
+            $('#contactForm').fadeOut();
+            $('#message-success').fadeIn();   
+         },
+         // If an error occured
+         error: function(err) {
+            $('#image-loader').fadeOut();
+            $('#message-warning').html(err);
+	         $('#message-warning').fadeIn();
+         }
       });
       return false;
    });
